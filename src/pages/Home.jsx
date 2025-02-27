@@ -132,7 +132,7 @@ const Home = () => {
           </div>
         )}
         {flikUrls.length === 0 ? (
-          <p className="text-gray-500 text-center text-lg italic">No URLs shortened yet—start flikking!</p>
+          <p className="text-gray-500 text-center text-lg italic">No URLs shortened yet—start fliking!</p>
         ) : (
           <div className="overflow-x-auto rounded-lg border border-gray-200">
             <table className="min-w-full divide-y divide-gray-200">
