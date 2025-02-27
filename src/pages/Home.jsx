@@ -117,7 +117,7 @@ const Home = () => {
       </div>
 
       <div className="w-full max-w-5xl p-8 bg-white rounded-2xl shadow-xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Your Flikked URLs</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Your Fliked URLs</h2>
         {fetchError && (
           <div className="text-red-500 text-center mb-6 text-sm animate-pulse">
             {fetchError}
