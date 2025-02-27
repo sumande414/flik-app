@@ -15,7 +15,8 @@ const Home = () => {
     const fetchFlikUrls = async () => {
       try {
         const data = await getAllFlikUrls();
-        setFlikUrls(data);
+        const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        setFlikUrls(sortedData);
       } catch (err) {
         setFetchError('Failed to fetch your shortened URLs.');
       }
