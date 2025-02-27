@@ -40,14 +40,21 @@ const Home = () => {
     }
   };
 
-  const handleDelete = async (flikkedUrl) => {
+  const handleDelete = (flikkedUrl) => {
     const id = flikkedUrl.split('/r/')[1];
-    try {
-      await deleteUrl(id);
-      setFlikUrls((prev) => prev.filter((url) => url.flikkedUrl !== flikkedUrl));
-    } catch (err) {
-      setFetchError('Failed to delete URL. Please try again.');
-    }
+    setFlikUrls((prev) => {
+      const updatedUrls = prev.filter((url) => url.flikkedUrl !== flikkedUrl);
+      return updatedUrls;
+    });
+
+    deleteUrl(id)
+      .then(() => {
+        console.log(`Successfully deleted URL: ${flikkedUrl}`);
+      })
+      .catch((err) => {
+        setFetchError('Failed to delete URL. Please refresh and try again.');
+        console.error('Delete failed:', err);
+      });
   };
 
   return (
