@@ -50,7 +50,7 @@ Visit http://localhost:5173.
 
 ## Notes
 
-- Requires a Spring Boot backend at http://<your-backend>
+- Requires a Spring Boot backend at http://your-backend
 - Uses Tailwind CSS for styling
 
 ## License
