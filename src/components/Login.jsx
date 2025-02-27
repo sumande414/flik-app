@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
           <p className="mt-2 text-lg text-gray-600">Sign in to your account</p>
         </div>
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <div className="rounded-md shadow-sm space-y-4">
+          <div className="rounded-md space-y-4">
             <div>
               <label htmlFor="login-email" className="sr-only">Email address</label>
               <input

@@ -45,7 +45,7 @@ const Register = ({ onRegister }) => {
           <p className="mt-2 text-lg text-gray-600">Sign up to get started</p>
         </div>
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <div className="rounded-md shadow-sm space-y-4">
+          <div className="rounded-md space-y-4">
             <div>
               <label htmlFor="signup-name" className="sr-only">Name</label>
               <input
