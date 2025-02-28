@@ -16,7 +16,7 @@ A React-based URL shortening service with a sleek, red-themed UI.
 Clone the repo:
 ```bash
 git clone <repository-url>
-cd flik-io-frontend
+cd flik-app
 ```
 
 Install dependencies:
