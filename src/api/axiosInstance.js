@@ -27,10 +27,15 @@ instance.interceptors.response.use(
     const originalRequest = error.config;
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-      const refreshToken = localStorage.getItem('refreshToken');
+      const refreshTokenValue = localStorage.getItem('refreshToken'); // Renamed for clarity
       
       try {
-        const { data } = await axios.post(`${API_URL}/refresh`, { refreshToken });
+        // Use plain axios to avoid adding Authorization header with expired token
+        const { data } = await axios.post(
+          `${API_URL}/refresh`, 
+          { refreshToken: refreshTokenValue },
+          { headers: { 'Content-Type': 'application/json' } }
+        );
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('refreshToken', data.refreshToken);
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`;
